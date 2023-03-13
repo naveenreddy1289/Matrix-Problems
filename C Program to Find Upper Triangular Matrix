@@ -1,0 +1,80 @@
+The program must accept an integer matrix of size NxN as the input. The program must retain the
+same position of the elements which are present in the upper right diagonal elements of the matrix
+and the remaining elements are replaced by * in the matrix. Finally, the program must print the
+modified matrix as the output.
+Boundary Condition(s):
+1 <= N <= 100
+Input Format:
+The first line contains the integer N.
+The next N lines contain N integers separated by space(s).
+Output Format:
+The first N lines contain N integers or * by a space.
+Example Input/Output 1:
+Input:
+4
+9 8 6 3
+5 2 7 5
+8 9 1 2
+4 6 3 5
+Output:
+9 8 6 3
+* 2 7 5
+* * 1 2
+* * * 5
+Explanation:
+In matrix the upper right diagonal elements are,
+9 8 6 3
+  2 7 5
+    1 2
+      5
+The remaining elements are replaced by *.
+Hence the output is
+9 8 6 3
+* 2 7 5
+* * 1 2
+* * * 5
+Example Input/Output 2:
+Input:
+3
+1 2 3
+4 5 6
+7 8 9
+Output:
+1 2 3
+* 5 6
+* * 9
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+    int N;
+    scanf("%d",&N);
+    int arr[N][N];
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    for(int i=0;i<N;i++){
+        for(int j=0;j<N;j++){
+            if(j>=i){
+                printf("%d ",arr[i][j]);
+            }
+            else{
+                printf("* ");
+            }
+        }
+        printf("\n");
+        
+    }
+}
+
+
+
